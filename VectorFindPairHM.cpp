@@ -3,6 +3,9 @@
 #include<algorithm>
 
 int FindPair(std::vector<int>& vec) {
+	if (vec.size() <= 2) {
+		return 0;
+	}
 	std::sort(vec.begin(), vec.end());
 	for (size_t i = 1; i < vec.size(); i += 2)
 	{
@@ -17,7 +20,7 @@ int FindPair(std::vector<int>& vec) {
 
 int main()
 {
-    std::vector<int> testVector = { 7, 9, 1, 7, 8, 0, 9, 1, 8 };
+    std::vector<int> testVector = { 7, 7 };
 
 	std::cout << FindPair(testVector);
 }
